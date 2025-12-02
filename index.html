@@ -3,45 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Handa Homes | Boutique Stays</title>
+  <title>Handa Homes | Airbnb Collection</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-start: #0d0f1d;
-      --bg-end: #0a1226;
-      --accent: #6cf2d2;
-      --accent-2: #7aa5ff;
-      --text: #e8f1ff;
-      --muted: #9dafc8;
-      --card: rgba(255, 255, 255, 0.06);
-      --border: rgba(255, 255, 255, 0.12);
-      --glow: rgba(124, 242, 212, 0.28);
+      --bg: #f7f7f7;
+      --card: #ffffff;
+      --text: #1f1f1f;
+      --muted: #6b6b6b;
+      --border: #e7e7e7;
+      --accent: #ff385c;
+      --accent-soft: #ffe9ee;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-      background:
-        radial-gradient(circle at 18% 20%, rgba(124, 242, 212, 0.08), transparent 35%),
-        radial-gradient(circle at 82% 0%, rgba(122, 165, 255, 0.14), transparent 40%),
-        linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(circle at 18% 15%, #fff4f7 0%, transparent 35%), var(--bg);
       color: var(--text);
-      padding: 40px 24px 80px;
+      padding: 30px 20px 60px;
     }
 
     header {
       max-width: 1100px;
-      margin: 0 auto 32px;
+      margin: 0 auto 28px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 16px;
-      position: relative;
     }
 
     .brand {
@@ -51,154 +46,121 @@
     }
 
     .logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(140deg, rgba(124, 242, 212, 0.2), rgba(122, 165, 255, 0.22));
-      border: 1px solid var(--border);
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: #ffeff3;
       display: grid;
       place-items: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .logo span {
-      font-weight: 700;
       color: var(--accent);
+      font-weight: 800;
       letter-spacing: 0.04em;
+      border: 1px solid #ffd7e1;
+      box-shadow: var(--shadow);
     }
 
-    .header-cta {
+    .brand h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: -0.2px;
+    }
+
+    .brand p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cta {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .pill {
-      padding: 8px 14px;
+      padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      border: 1px solid #ffd1dc;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       padding: 12px 16px;
       border-radius: 12px;
-      border: 1px solid rgba(124, 242, 212, 0.35);
-      background: linear-gradient(120deg, rgba(124, 242, 212, 0.18), rgba(122, 165, 255, 0.18));
-      color: var(--text);
+      background: var(--accent);
+      color: #fff;
       font-weight: 700;
-      cursor: pointer;
       text-decoration: none;
-      transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 10px 28px rgba(255, 56, 92, 0.24);
+      transition: transform 120ms ease, box-shadow 120ms ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(124, 242, 212, 0.6);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(255, 56, 92, 0.28); }
 
     .hero {
       max-width: 1100px;
       margin: 0 auto 28px;
-      padding: 28px;
-      border-radius: 28px;
       background: var(--card);
+      border-radius: 22px;
       border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+      padding: 26px;
+      box-shadow: var(--shadow);
     }
 
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.85;
-      pointer-events: none;
-    }
-
-    .hero::before {
-      background: var(--glow);
-      top: -80px;
-      right: -40px;
-    }
-
-    .hero::after {
-      background: rgba(122, 165, 255, 0.28);
-      bottom: -90px;
-      left: -50px;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(32px, 4vw, 46px);
-      letter-spacing: -0.6px;
+    .hero h2 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 36px);
+      letter-spacing: -0.5px;
     }
 
     .hero p {
-      margin: 0 0 14px;
+      margin: 0 0 16px;
       color: var(--muted);
       line-height: 1.6;
-      max-width: 720px;
+      max-width: 760px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 18px;
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .stat {
-      padding: 12px 14px;
-      border-radius: 16px;
+    .chip {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f2f2f2;
+      color: #333;
+      font-weight: 600;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .stat .label {
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.02em;
-    }
-
-    .stat .value {
-      margin-top: 6px;
-      font-size: 20px;
-      font-weight: 700;
     }
 
     .section-title {
       max-width: 1100px;
-      margin: 28px auto 12px;
+      margin: 26px auto 12px;
       display: flex;
       align-items: center;
       gap: 10px;
       color: var(--muted);
-      letter-spacing: 0.08em;
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
     }
 
     .section-title::before {
       content: "";
-      width: 36px;
+      width: 34px;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      background: linear-gradient(90deg, var(--accent), #ff9fb4);
       border-radius: 2px;
     }
 
@@ -211,101 +173,115 @@
     }
 
     .card {
-      position: relative;
-      border-radius: 20px;
       background: var(--card);
-      border: 1px solid var(--border);
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
-      transition: transform 160ms ease, border-color 160ms ease;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(124, 242, 212, 0.4);
-    }
-
-    .thumb {
+    .photo {
       position: relative;
-      padding-top: 62%;
+      padding-top: 68%;
       background-size: cover;
       background-position: center;
     }
 
-    .tag {
+    .photo .badge {
       position: absolute;
       top: 12px;
       left: 12px;
       padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(12, 18, 42, 0.8);
-      border: 1px solid rgba(124, 242, 212, 0.35);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.92);
       color: var(--accent);
       font-weight: 700;
-      letter-spacing: 0.02em;
-      font-size: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
 
     .card-body {
-      padding: 16px 16px 18px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
     }
 
     .card h3 {
-      margin: 0 0 6px;
+      margin: 0;
       font-size: 18px;
+      letter-spacing: -0.2px;
     }
 
     .card p {
-      margin: 0 0 12px;
+      margin: 0;
       color: var(--muted);
       line-height: 1.5;
+      font-size: 14px;
     }
 
     .amenities {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
+      gap: 6px;
     }
 
-    .chip {
+    .tag {
       padding: 6px 10px;
       border-radius: 10px;
+      background: #f5f5f5;
       border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
-      font-size: 13px;
+      font-size: 12px;
+      color: #333;
     }
 
     .price {
       display: flex;
       align-items: baseline;
-      gap: 8px;
+      gap: 6px;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 17px;
+      color: #111;
     }
 
-    .price .night {
+    .price span {
       color: var(--muted);
       font-size: 13px;
-      letter-spacing: 0.02em;
+    }
+
+    .card .actions {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .link {
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
     }
 
     .pricing-table {
       max-width: 1100px;
       margin: 12px auto;
-      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border-radius: var(--radius);
       background: var(--card);
-      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      color: var(--text);
       font-size: 14px;
+      color: #222;
     }
 
     th, td {
@@ -315,46 +291,37 @@
     }
 
     th {
-      background: rgba(255, 255, 255, 0.03);
-      font-size: 13px;
-      letter-spacing: 0.04em;
+      background: #fafafa;
+      font-size: 12px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--muted);
     }
 
     tr:last-child td { border-bottom: none; }
 
-    .discount {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 12px;
-      background: rgba(124, 242, 212, 0.12);
-      border: 1px solid rgba(124, 242, 212, 0.3);
-      color: var(--accent);
-      font-weight: 700;
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+      padding: 12px 16px;
+      background: #fff8fa;
     }
 
     .contact {
       max-width: 1100px;
       margin: 18px auto 0;
       padding: 22px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
+      border-radius: var(--radius);
       background: var(--card);
+      border: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+      box-shadow: var(--shadow);
     }
 
-    .contact p {
-      margin: 4px 0;
-      color: var(--muted);
-    }
-
-    .contact strong { color: var(--text); }
+    .contact h4 { margin: 0 0 6px; }
+    .contact p { margin: 4px 0; color: var(--muted); }
 
     footer {
       max-width: 1100px;
@@ -364,122 +331,127 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px;
+      font-size: 13px;
     }
 
     @media (max-width: 640px) {
       header { flex-direction: column; align-items: flex-start; }
-      .header-cta { width: 100%; justify-content: space-between; }
-      .hero { padding: 22px; }
+      .cta { width: 100%; justify-content: space-between; }
+      .hero { padding: 20px; }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="brand">
-      <div class="logo"><span>HH</span></div>
+      <div class="logo">HH</div>
       <div>
-        <div style="font-weight:700; font-size:16px;">Handa Homes</div>
-        <div style="color:var(--muted); font-size:13px;">Boutique stays, designed for comfort.</div>
+        <h1>Handa Homes</h1>
+        <p>Airbnb-hosted stays, curated for comfort.</p>
       </div>
     </div>
-    <div class="header-cta">
-      <div class="pill">New: Winter Weeknight 15% Off</div>
-      <a class="btn" href="mailto:stay@handahomes.com">Book a Stay ↗</a>
+    <div class="cta">
+      <div class="pill">Verified Airbnb listings</div>
+      <a class="btn" href="mailto:stay@handahomes.com">Contact host</a>
     </div>
   </header>
 
   <section class="hero">
-    <h1>Find your next stay with Handa Homes.</h1>
-    <p>Four thoughtfully curated homes with bright interiors, fast Wi‑Fi, plush linens, and self check‑in. Perfect for family getaways, workcations, or a long weekend reset.</p>
-    <div class="hero-grid">
-      <div class="stat">
-        <div class="label">Locations</div>
-        <div class="value">Downtown • Lakeview • Hillside • Marina</div>
-      </div>
-      <div class="stat">
-        <div class="label">Amenities</div>
-        <div class="value">Wi‑Fi 300 Mbps, Parking, Full Kitchens, EV-ready</div>
-      </div>
-      <div class="stat">
-        <div class="label">Support</div>
-        <div class="value">Concierge chat 8am‑10pm, 7 days</div>
-      </div>
+    <h2>Stay with Handa Homes.</h2>
+    <p>Four Airbnb listings with bright interiors, easy check-in, and responsive hosting. Browse the collection, check availability on Airbnb, and reach out if you have special requests.</p>
+    <div class="chips">
+      <div class="chip">Self check-in</div>
+      <div class="chip">Fast Wi-Fi</div>
+      <div class="chip">Dedicated workspaces</div>
+      <div class="chip">Kitchens & laundry</div>
     </div>
   </section>
 
-  <div class="section-title">Featured Properties</div>
+  <div class="section-title">Featured listings</div>
   <section class="grid">
     <article class="card">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80');">
-        <div class="tag">Downtown Loft</div>
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80');">
+        <div class="badge">Entire home</div>
       </div>
       <div class="card-body">
-        <h3>SoMa Skylight Loft</h3>
-        <p>2BR | Sleeps 4 | Floor‑to‑ceiling windows, espresso bar, steps from cafes.</p>
+        <h3>Listing #1</h3>
+        <p>Airbnb ID 1488883253714215311. Bright, modern stay with easy access to local highlights.</p>
         <div class="amenities">
-          <span class="chip">300 Mbps Wi‑Fi</span>
-          <span class="chip">Parking</span>
-          <span class="chip">Washer/Dryer</span>
-          <span class="chip">Self Check‑in</span>
+          <span class="tag">Wi-Fi</span>
+          <span class="tag">Kitchen</span>
+          <span class="tag">Washer</span>
+          <span class="tag">Self check-in</span>
         </div>
-        <div class="price">$240<span class="night">/night avg</span></div>
+        <div class="actions">
+          <div class="price">Nightly on Airbnb<span>see live rates</span></div>
+          <a class="link" href="https://www.airbnb.co.in/rooms/1488883253714215311" target="_blank" rel="noreferrer noopener">View on Airbnb ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1472220625704-91e1462799b2?auto=format&fit=crop&w=1200&q=80');">
-        <div class="tag">Lakeview</div>
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1484156818044-c040038b0710?auto=format&fit=crop&w=1200&q=80');">
+        <div class="badge">Entire home</div>
       </div>
       <div class="card-body">
-        <h3>North Shore Retreat</h3>
-        <p>3BR | Sleeps 6 | Lake deck, grill, fire pit, and paddleboards included.</p>
+        <h3>Listing #2</h3>
+        <p>Airbnb ID 772298180319964078. Cozy retreat with thoughtful touches and a welcoming layout.</p>
         <div class="amenities">
-          <span class="chip">Lakeside Deck</span>
-          <span class="chip">Fire Pit</span>
-          <span class="chip">EV Charger</span>
-          <span class="chip">Pet Friendly</span>
+          <span class="tag">Wi-Fi</span>
+          <span class="tag">Air conditioning</span>
+          <span class="tag">Parking</span>
+          <span class="tag">Workspace</span>
         </div>
-        <div class="price">$285<span class="night">/night avg</span></div>
+        <div class="actions">
+          <div class="price">Nightly on Airbnb<span>see live rates</span></div>
+          <a class="link" href="https://www.airbnb.co.in/rooms/772298180319964078" target="_blank" rel="noreferrer noopener">View on Airbnb ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1505693415763-3ed5e04ba4cd?auto=format&fit=crop&w=1200&q=80');">
-        <div class="tag">Hillside</div>
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80&sat=-15');">
+        <div class="badge">Entire home</div>
       </div>
       <div class="card-body">
-        <h3>Cedar Ridge Chalet</h3>
-        <p>4BR | Sleeps 8 | Mountain views, sauna, wood stove, stocked game room.</p>
+        <h3>Listing #3</h3>
+        <p>Airbnb ID 1488933080855732939. Light-filled space ideal for longer stays and workcations.</p>
         <div class="amenities">
-          <span class="chip">Sauna</span>
-          <span class="chip">Wood Stove</span>
-          <span class="chip">Game Room</span>
-          <span class="chip">Heated Floors</span>
+          <span class="tag">Wi-Fi</span>
+          <span class="tag">Kitchen</span>
+          <span class="tag">Washer/Dryer</span>
+          <span class="tag">Smart TV</span>
         </div>
-        <div class="price">$340<span class="night">/night avg</span></div>
+        <div class="actions">
+          <div class="price">Nightly on Airbnb<span>see live rates</span></div>
+          <a class="link" href="https://www.airbnb.co.in/rooms/1488933080855732939" target="_blank" rel="noreferrer noopener">View on Airbnb ↗</a>
+        </div>
       </div>
     </article>
 
     <article class="card">
-      <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1484156818044-c040038b0710?auto=format&fit=crop&w=1200&q=80');">
-        <div class="tag">Marina</div>
+      <div class="photo" style="background-image:url('https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80');">
+        <div class="badge">Entire home</div>
       </div>
       <div class="card-body">
-        <h3>Harborlight Bungalow</h3>
-        <p>2BR | Sleeps 4 | Steps to the pier, courtyard dining, beach cruisers.</p>
+        <h3>Listing #4</h3>
+        <p>Airbnb ID 1153212540201068866. Calm, design-forward home close to dining and transit.</p>
         <div class="amenities">
-          <span class="chip">Beach Access</span>
-          <span class="chip">Cruiser Bikes</span>
-          <span class="chip">Outdoor Shower</span>
-          <span class="chip">Dedicated Workspace</span>
+          <span class="tag">Wi-Fi</span>
+          <span class="tag">Kitchenette</span>
+          <span class="tag">On-site parking</span>
+          <span class="tag">Coffee setup</span>
         </div>
-        <div class="price">$225<span class="night">/night avg</span></div>
+        <div class="actions">
+          <div class="price">Nightly on Airbnb<span>see live rates</span></div>
+          <a class="link" href="https://www.airbnb.co.in/rooms/1153212540201068866" target="_blank" rel="noreferrer noopener">View on Airbnb ↗</a>
+        </div>
       </div>
     </article>
   </section>
 
-  <div class="section-title">Rates & Discounts</div>
+  <div class="section-title">Rates & discounts</div>
   <section class="pricing-table">
     <table>
       <thead>
@@ -497,14 +469,14 @@
           <td>Jan 5 – Mar 15</td>
           <td>$210</td>
           <td>$245</td>
-          <td><span class="discount">15% Off Sun–Thu</span></td>
+          <td>15% off Sun–Thu</td>
         </tr>
         <tr>
           <td>Spring</td>
           <td>Mar 16 – Jun 1</td>
           <td>$230</td>
           <td>$265</td>
-          <td>Stay 3+ nights, get 10% off</td>
+          <td>3+ nights: 10% off</td>
         </tr>
         <tr>
           <td>Summer Peak</td>
@@ -518,7 +490,7 @@
           <td>Sep 9 – Nov 20</td>
           <td>$235</td>
           <td>$270</td>
-          <td>Early booking: 5% off</td>
+          <td>Early booking 5% off</td>
         </tr>
         <tr>
           <td>Holidays</td>
@@ -529,31 +501,32 @@
         </tr>
       </tbody>
     </table>
+    <div class="note">Live pricing and discounts are shown on each Airbnb listing. Use the links above to pick dates and see the latest totals, fees, and availability.</div>
   </section>
 
-  <div class="section-title">Contact Us</div>
+  <div class="section-title">Contact</div>
   <section class="contact">
     <div>
-      <strong>Reservations & Questions</strong>
-      <p>Email: <a class="btn" style="padding:8px 12px; font-size:13px;" href="mailto:stay@handahomes.com">stay@handahomes.com</a></p>
+      <h4>Questions or booking help</h4>
+      <p>Email: <a class="link" href="mailto:stay@handahomes.com">stay@handahomes.com</a></p>
       <p>Phone: <strong>(415) 555-0187</strong></p>
     </div>
     <div>
-      <strong>Location</strong>
+      <h4>Location</h4>
       <p>Handa Homes HQ</p>
       <p>241 Market Street, Suite 210</p>
       <p>San Francisco, CA</p>
     </div>
     <div>
-      <strong>Availability</strong>
+      <h4>Response</h4>
       <p>8am – 10pm, 7 days</p>
-      <p>Response time: under 1 hour</p>
+      <p>Typical response under 1 hour</p>
     </div>
   </section>
 
   <footer>
-    <span>Handa Homes • Boutique Stays</span>
-    <span>Follow us on Instagram @HandaHomes</span>
+    <span>Handa Homes • Hosted on Airbnb</span>
+    <span>Follow along @HandaHomes</span>
   </footer>
 </body>
 </html>
